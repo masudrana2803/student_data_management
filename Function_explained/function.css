@@ -1,0 +1,51 @@
+body{
+    display: fle;
+    justify-content: center;
+    text-align: center;
+}
+.body-container{
+    width: 100%;
+    max-width: 600px;
+    background-color: azure;
+    text-align: center;
+    padding: 20px;
+    border: 4px dotted red;
+    border-radius: 25px;
+}
+
+
+
+.menu1{
+    width: fit-content;
+    height: 50px;
+    color: Red;
+    border: 2px solid blue;
+}
+.menu2{
+    width: fit-content;
+    height: 50px;
+    color: Red;
+    border: 2px solid blue;
+}
+.menu3{
+    width: fit-content;
+    height: 50px;
+    color: Red;
+    border: 2px solid blue;
+}
+.menu4{
+    width: fit-content;
+    height: 50px;
+    color: Red;
+    border: 2px solid blue;
+}
+
+.appear{
+width: 600px;
+/* display: flex;
+flex-direction:column ;
+justify-content: space-between;
+align-items: center; */
+padding: 10px;
+margin: 20px;
+}
