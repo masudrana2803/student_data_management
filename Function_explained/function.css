@@ -97,3 +97,20 @@ margin: 20px;
 #container1{
     display: none;
 }
+
+
+#do_append_child{
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: aqua;
+    padding: 30px;
+    border-radius: 25px;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    gap: 20px;
+}
