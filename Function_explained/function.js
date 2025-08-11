@@ -33,24 +33,43 @@ function addItems (){
     addbtn.innerHTML=`
     <div class="totalToDo">
     <input type="text" class="singleAdd">
-    <button id="editBtn" onclick="editThis()">Edit</button>
-    <button id="updateBtn" onclick="updateThis()">Update</button>
-    <button id="deleteBtn" onclick="deleteThis()">Delete</button>
+    <button id="editBtn">Edit</button>
+    <button id="updateBtn">Update</button>
+    <button id="deleteBtn">Delete</button>
     </div>
     `
+    
+    const singleAdd = addbtn.querySelector('.singleAdd')
+    const editBtn = addbtn.querySelector('.editBtn')
+    const updateBtn = addbtn.querySelector('.updateBtn')
+    const deleteBtn = addbtn.querySelector('.deleteBtn')
+    
+    singleAdd.value = inputType.value
+    singleAdd.setAttribute('readonly','')
     inputType.value=''
-
-    addbtn.querySelector('.singleAdd').value = inputType.value
     todo.appendChild(addbtn)
 
 
-    let editBtn = document.getElementById('editBtn')
-    let updateBtn = document.getElementById('updateBtn')
-    let deleteBtn = document.getElementById('deleteBtn')
+    // editBtn.addEventListener('click',()=>{
+    // singleAdd.removeAttribute('readonly')
+    // singleAdd.focus()
+    // console.log('clicked edit')
+    // })
 
-    editBtn.addEventListener('click',()=>{
-        editBtn.style='background:red'
+        // Edit button: remove readonly
+    editBtn.addEventListener('click', () => {
+        singleAdd.removeAttribute('readonly')
+        singleAdd.focus()
     })
 
+    // Update button: set readonly again
+    updateBtn.addEventListener('click', () => {
+        singleAdd.setAttribute('readonly', '')
+    })
+
+    // Delete button
+    deleteBtn.addEventListener('click', () => {
+        addbtn.remove()
+    })
 
 }
