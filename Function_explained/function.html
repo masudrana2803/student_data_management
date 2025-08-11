@@ -8,7 +8,8 @@
 </head>
 <body>
 
-    <div class="body-container">
+    <!-- <div class="container" id="container1"></div> -->
+    <div class="body-container" id="container1">
         <h3>From the below button we are going to learn the formula of declaring and calling a function in a button. <br>we will also learn how to call the append child</h3>
     
         <button id="appear" onclick="appearThem()">Append childs
@@ -30,9 +31,16 @@
 
 <section id="todo">
 <h2> To_Do_List</h2>
-<input type="text" id="inpuType">
-<button id="addbtn">Add</button>
-<div class="totalToDo"></div>
+<div class="singleRow">
+    <input type="text" id="inputType" class="inputType" placeholder="Enter the data">
+    <button id="addbtn" onclick="addItems()">Add</button>
+</div>
+<!-- <div class="totalToDo">
+    <input type="text" id="singleAdd">
+    <button id="editBtn">Edit</button>
+    <button id="updateBtn" onclick="updateThis()">Update</button>
+    <button id="deleteBtn" onclick="deleteThis()">Delete</button>
+</div> -->
 
 
 </section>

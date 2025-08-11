@@ -42,10 +42,58 @@ body{
 
 .appear{
 width: 600px;
-/* display: flex;
-flex-direction:column ;
-justify-content: space-between;
-align-items: center; */
+display: flex;
 padding: 10px;
 margin: 20px;
+}
+
+/* todo list css */
+#todo{
+    background-color: antiquewhite;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 40px;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    padding: 30px;
+
+}
+
+/* .inputType{
+    width: 300px;
+    height: 30px;
+    margin-bottom: 20px;
+    padding-left: 30px;
+    color: red;
+} */
+
+#addbtn{
+    height: 35px;
+    width: 50px;
+    background-color:gray;
+    border-radius: 10px;
+}
+
+.totalToDo{
+    background-color: red;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.totalToDo input{
+    width:100%;
+}
+.singleRow{
+    width: 100%;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.singleRow input{
+    width: 100%;
+}
+
+#container1{
+    display: none;
 }
