@@ -24,52 +24,58 @@ function appearThem() {
 
 }
 
-function addItems (){
-    const todo=document.getElementById('todo')
-    const inputType=document.getElementById('inputType')
 
-    const addbtn = document.createElement('div')
-    addbtn.classList.add('addbtn')
-    addbtn.innerHTML=`
+
+let todo = document.querySelector('#todo')
+let inputType = document.querySelector('#inputType')
+let addbtn = document.querySelector('#addbtn')
+
+addbtn.addEventListener('click',()=>{
+    console.log('i am done')
+
+    let totalToDo=document.createElement('div')
+    totalToDo.classList.add=('totalToDo')
+    totalToDo.innerHTML=`
     <div class="totalToDo">
-    <input type="text" class="singleAdd">
+    <input type="text" id="singleAdd">
     <button id="editBtn">Edit</button>
     <button id="updateBtn">Update</button>
     <button id="deleteBtn">Delete</button>
     </div>
     `
-    
-    const singleAdd = addbtn.querySelector('.singleAdd')
-    const editBtn = addbtn.querySelector('.editBtn')
-    const updateBtn = addbtn.querySelector('.updateBtn')
-    const deleteBtn = addbtn.querySelector('.deleteBtn')
-    
+    // Add to DOM first
+    todo.appendChild(totalToDo)
+
+    // Get input inside this new item
+    const singleAdd = totalToDo.querySelector('#singleAdd')
     singleAdd.value = inputType.value
-    singleAdd.setAttribute('readonly','')
-    inputType.value=''
-    todo.appendChild(addbtn)
+    inputType.value = '' // now clear the input
 
+    // Button references
+    const editBtn = totalToDo.querySelector('#editBtn')
+    const updateBtn = totalToDo.querySelector('#updateBtn')
+    const deleteBtn = totalToDo.querySelector('#deleteBtn')
 
-    // editBtn.addEventListener('click',()=>{
-    // singleAdd.removeAttribute('readonly')
-    // singleAdd.focus()
-    // console.log('clicked edit')
-    // })
-
-        // Edit button: remove readonly
+    // Edit
     editBtn.addEventListener('click', () => {
         singleAdd.removeAttribute('readonly')
         singleAdd.focus()
     })
 
-    // Update button: set readonly again
+    // Update
     updateBtn.addEventListener('click', () => {
         singleAdd.setAttribute('readonly', '')
     })
 
-    // Delete button
+    // Delete
     deleteBtn.addEventListener('click', () => {
-        addbtn.remove()
+        totalToDo.remove()
     })
 
-}
+})
+
+inputType.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+        addbtn.click()
+    }
+})
