@@ -3,6 +3,7 @@
 let container1 = document.getElementById('container1');
 // let appear=document.getElementById('appear')
 function appearThem() {
+    console.log('clicked it')
     // Create a new div element
     const appear = document.createElement('div');
     // Add the 'appearThem' class to the div
@@ -21,6 +22,7 @@ function appearThem() {
         <div class="menu4">
             <p>I am menu4</p>
         </div>
+
     `;
         container1.appendChild(appear);
 
