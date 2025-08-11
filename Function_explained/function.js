@@ -1,3 +1,5 @@
+
+
 let container1 = document.getElementById('container1');
 // let appear=document.getElementById('appear')
 function appearThem() {
@@ -79,3 +81,38 @@ inputType.addEventListener('keypress', (event) => {
         addbtn.click()
     }
 })
+
+let appearit = document.querySelector('#appearit'); // ✅ correct spelling
+let append_name = document.querySelector('#append_name');
+let append_age = document.querySelector('#append_age');
+let append_gender = document.querySelector('#append_gender');
+let append_interest = document.querySelector('#append_interest');
+let appendIt = document.querySelector('#appendIt'); // ✅ need to select this too
+
+appendIt.addEventListener('click', (e) => {
+    e.preventDefault(); // ✅ prevent page reload
+    console.log('clicked');
+
+    const append_list = document.createElement('div');
+    append_list.classList.add('append_list');
+
+    append_list.innerHTML = `
+        <p>Name: ${append_name.value}</p>
+        <p>Age: ${append_age.value}</p>
+        <p>Gender: ${append_gender.value}</p>
+        <p>Interested: ${append_interest.value}</p>
+    `;
+
+    if (!append_name.value||!append_age.value||!append_gender.value||!append_interest.value) {
+        alert('put value')
+        return
+    }
+    appearit.appendChild(append_list);
+    
+
+    // Optional: clear form fields after adding
+    append_name.value = '';
+    append_age.value = '';
+    append_gender.value = '';
+    append_interest.value = '';
+});
